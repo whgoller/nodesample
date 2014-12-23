@@ -1,0 +1,59 @@
+//- main admin page
+//- views/list.jade
+extends layout2
+
+block content
+   div.row
+      div.large-12.medium-12.small-12.columns
+         br
+         br
+         br
+         h3.left blog manager
+            span.fa.fa-jsfiddle.lt-space
+
+
+   //- table
+   div.row
+      div.large-12.medium-12.columns.tp-space
+         table
+            thead
+               tr
+                  th.center(width='80') author
+                  th.center(width='180') title
+                  th.center(width='160') tags
+                  th.center(width='140') date created
+                  th.center(width='140') last edited
+                  th.center(width='80') edit
+                  th.center(width='85') delete
+                  th.center(width='80') view
+
+            tbody
+               each blog in blogs
+                  tr.font-200
+                     td #{blog.author}
+                     td #{blog.title}
+                     td #{blog.tags}
+                     td #{helpers.date.dateFormat(blog.createdOn)}
+                     td #{helpers.date.dateFormat(blog.modifiedOn)}
+                     td 
+                        form(action="/blogmgr/edit/#{blog.slug}", method='get')
+                           input(type='submit', value='edit', class='button btn-size-2')
+                     td
+                        form(action="/blogmgr/#{blog.slug}", method='post')
+                           input(type='hidden' name='_method' value='delete')
+                           input(type='submit', value='delete', class='button btn-size-2')
+                     td
+                        form(action="/blogs/#{blog.slug}", method='get')
+                           input(type='submit', value='view', class='button btn-size-2')
+   
+         br
+         p
+            a#resize(href='/blogmgr/new', class='button success btn-size') create new blog
+               span.fa.fa-chevron-right.lt-space-2
+
+         br
+         br
+         br
+
+      div.push
+

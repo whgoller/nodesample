@@ -1,0 +1,94 @@
+extends layout
+
+block content
+   section.homepage-hero
+      img(src='images/project.svg', alt='OpenWest Project')
+
+   div.row
+      //- left section 
+      div.large-9.columns
+         h2.space-top-2 about the project
+            span.fa.fa-code.lt-space-2
+         img(src='images/openwest.png', alt='OpenWest Project', class='img-tiny right')
+         p The goal of this project is to help educate any interested developer about Node.js and Express.js by providing a working example.  
+         br
+
+         h3 description
+         p The project is a simple model-view-controller app using Express 4.x and Mongoose. The application allows users to register and login and enables them to view, edit and delete blogs. A few static pages are built in Jade, a template engine, while the blogs are retrieved from the MongoDB database, thereby simulating a simple CMS application. 
+
+         p To get the maximum value out of this page, you'll need to look at the project source code. See link in the footer to download.
+
+         p The main file of the application is located in the project directory and is named <span class="code">app.js</span>, which handles the following: 
+         ul
+            li.square defines all module dependencies  
+            li.square loads all middleware required for the project
+            li.square sets up the view engine for static pages
+            li.square defines route handling 
+            li.square defines error handling
+            li.square connects to the database
+            li.square binds the Express app to a port
+
+         p The mongoose code is located in the lib subdirectory and is named <span class="code">db.js</span>. It: 
+         ul
+            li.square connects to the database, in this case a local database   
+            li.square checks for failed data validation and duplicate key errors
+            li.square checks the database connection 
+
+         p The routes folder has a file for each route controller. The function of the route controller files are:
+         ul
+            li.square <span class="code">blogs.js</span> &mdash; displays the static pages and manages the routes for all blog operations, including displaying a list of blogs and creating, reading, updating and deleting of blogs
+            li.square <span class="code">users.js</span> &mdash; displays the user registration page and creates a user in the database
+            li.square <span class="code">sessions.js</span> &mdash; renders the login page, manages user authentication, and signs users out
+            li.square <span class="code">main.js</span> &mdash; the application controller for routes requiring user authentication
+            li.square <span class="code">index.js</span> &mdash; exports every route in <span class="code">app.js</span>
+
+         p The models folder contains two import JavaScript files:
+         ul
+            li.square <span class="code">blog.js</span> &mdash; defines the blog schema using Mongoose and includes a couple functions to create url slugs based on the blog title
+            li.square <span class="code">user.js</span> &mdash; defines the user schema using Mongoose and methods to set a new user's password, validate schema properties and manage user authentication
+
+         p The views folder contains all of the Jade templates to build the static HTML:
+         ul
+            li.square <span class="code">blogs.jade</span> &mdash; the main blogs page 
+            li.square <span class="code">edit.jade</span> &mdash; the blog editor (use HTML)
+            li.square <span class="code">index.jade</span> &mdash; the home page
+            li.square <span class="code">layout.jade</span> &mdash; the template for home, blogs, project and tools pages 
+            li.square <span class="code">layout2.jade</span> &mdash; the template for the editor (edit.jade), the list of blogs (list.jade)
+            li.square <span class="code">list.jade</span> &mdash; the blog manager page which provides a table of all blogs
+            li.square <span class="code">project.jade</span> &mdash; this page, which is a description of the project
+            li.square <span class="code">show.jade</span> &mdash; the page for individual blogs
+            li.square <span class="code">sidebar.jade</span> &mdash; the sidebar for blogs, projects and tools pages
+            li.square <span class="code">tools.jade</span> &mdash; the open source code used for this project
+            li.square <span class="code">sessions/new.jade</span> &mdash; the login page
+            li.square <span class="code">users/new.jade</span> &mdash; the create new user page
+
+         p The helpers folder contain Jade helper files. Helpers are small code snippets that perform various functions for the view pages:
+         ul
+            li.square <span class="code">tools.js</span> &mdash; snippet to format the blog date in the list.jade file
+            li.square <span class="code">query.js</span> &mdash; currently not used 
+            li.square <span class="code">index.js</span> &mdash; makes the helper files available
+
+         p The public folder contains images, style sheets and general folders:
+         ul
+            li.square the images folder contains all the images   
+            li.square the javascripts folder contains sticky-footer.js, a simple script to stick the footer to the bottom when the viewport is larger than the page size
+            li.square the stylesheets folder contains the <span class="code">app.css</span> file used in the project 
+
+         p The scss folder contains the sass source files that get compiled into the main css file. This folder is compiled using libsass, a node module, to convert the .scss files into .css. Two files are used:
+         ul
+            li.square <span class="code">app.scss</span> &mdash; location of our custom sass code
+            li.square <span class="code">_settings.scss</span> &mdash; optional foundation 5 tool to get a project set up quickly
+
+         p In addition, the project contains some other folders and files:
+         ul
+            li.square bower_components folder &mdash; contains various code modules that are defined by <span class="code">bower.json</span>, including foundation, jquery and modernizer
+            li.square node_modules folder &mdash; contains code modules required by the project as defined in <span class="code">package.json</span>
+            li.square <span class="code">gruntfile.js</span> &mdash; the grunt script which is currently set up as a watcher to convert scss files to css whenever there is an update
+
+         br
+         br
+         br
+
+            
+      div.large-3.medium-3.columns.hide-for-small-only
+         include sidebar

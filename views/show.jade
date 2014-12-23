@@ -1,0 +1,31 @@
+//- display a blog 
+extends layout
+
+block content
+   section.homepage-hero
+      img(src='images/project-blogs.svg')
+
+   div.row
+      //- left section 
+      div.large-9.medium-9.columns
+         if blog
+            h2.space-top-2 #{blog.title}
+               span.space-top-2
+            p.blog #{helpers.date.dateFormat(blog.createdOn)} 
+               span.lt-space-2 |  
+               span.lt-space-2 #{blog.tags}
+            
+            p !{blog.body}
+
+            //- is this line of code is broken?
+            //- a(href='/blogs/#{nextBlog.slug}') get next
+
+            br
+            br
+            br
+
+
+      //- right section 
+      div.large-3.medium-3.columns.hide-for-small-only
+         include sidebar
+

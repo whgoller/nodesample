@@ -1,0 +1,66 @@
+extends layout
+
+block content
+   section.homepage-hero
+      img(src='images/node-express.svg')
+
+   div.row
+      div.large-12.columns.space-top
+         h2.centered OpenWest Project
+            span.fa.fa-jsfiddle.fa-lg.lt-space-2
+         p.centered This project is built for an OpenWest talk to be given in May 2015. 
+         p.centered The project uses the following open source technologies: 
+         br
+         br
+
+   div.row
+      div.large-3.medium-3.columns
+         h5.upper Node.js
+         img(src='images/node.jpg').img-border.img-sm
+         p.sm2.tp-space A JavaScript platform built on Chrome's V8 engine for building fast, scalable, network apps
+
+      div.large-3.medium-3.columns
+         h5.upper Express.js
+         img(src='images/express.jpg').img-border.img-sm
+         p.sm2.tp-space A lightweight web framework for node.js with a built-in web server and simple way to create REST APIs
+
+      div.large-3.medium-3.columns
+         h5.upper Mongoosejs
+         img(src='images/mongoose.jpg').img-border.img-sm 
+         p.sm2.tp-space An awesome mongodb object modeling tool for node.js that is easy to use compared with the native driver
+
+      div.large-3.medium-3.columns
+         h5.upper MongoDB
+         img(src='images/mongo.jpg').img-border.img-sm 
+         p.sm2.tp-space An fast, scalable, schemaless, document-oriented database 
+
+   hr.my-hr
+
+   //- blog section
+   section
+      div.row
+         div.large-12.medium-12.columns
+            h3.centered the project
+            h2.space-top-2 #{blog.title}
+               span.space-top-2
+            
+            div#limit !{blog.body}
+
+            p.hide
+            a(href='/blogs', class='button success btn-size') Read More
+               span.fa.fa-chevron-right.lt-space-2
+
+   //- bluehost dev team banner 
+   section.banner
+      div.row
+         div.large-5.medium-5.columns.banner-image
+            img(src='images/responsive.svg', alt='responsive design')
+
+         div.large-7.medium-7.columns.banner-info
+            h3 Foundation 5
+               img(src='images/foundation.png', alt='foundation', class='img-right-2')
+            p This project is using the Foundation 5 CSS framework with built-in support for Sass. It takes a complete mobile first paradigm to make it easy to build responsive websites.
+            a(href='http://foundation.zurb.com/', class='button btn-size', target='_blank') Learn More
+               span.fa.fa-chevron-right.lt-space-2
+
+

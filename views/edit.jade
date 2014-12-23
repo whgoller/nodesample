@@ -1,0 +1,48 @@
+//- views/edit.jade 
+extends layout2
+
+block content
+   div.row
+      div.large-12.medium-12.small-12.columns
+         br
+         br
+         br
+         
+         h3.left blog editor
+            span.fa.fa-jsfiddle.lt-space
+
+         if error
+            p.notification.error= error
+
+         if info
+            p.notification.info= info
+
+         br
+         br
+
+         form(id='createBlogForm' method='post' action='')
+            label blog title
+               input(type='text', name='title', value='#{blog ? blog.title : ""}' placeholder='blog title')
+            label blog tags
+               input(type='text', name='tags', value='#{blog ? blog.tags : ""}' placeholder='enter tags separated by space')
+            label.endlabel blog date
+               input(type='text', name='created', value='#{blog ? helpers.date.dateFormat(blog.createdOn) : ""}' placeholder='do not enter')
+            textarea(id='editor', cols='80' rows='20' name='body' placeholder='blog text (with HTML formatting)')
+               = blog ? blog.body : ""
+            br
+            if blog 
+               input(type='hidden' name='_method' value='put')   
+            input(type='submit', value='#{blog ? "update" : "save"}', id='resize' class='button success btn-size')
+
+         if blog
+            form(action="/blogs/#{blog.slug}", method='get')
+               input(type='submit', value='view', class='button success btn-size-3 relo-btn')
+         if ! blog
+            p
+               a(href='/blogmgr/list') return to blog mgr
+
+         br
+         br
+         br
+         br
+

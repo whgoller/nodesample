@@ -1,0 +1,74 @@
+extends layout
+
+block content
+   section.homepage-hero
+      img(src='images/web-dev.svg', alt='Real-time Web Apps')
+
+   div.row
+      //- left section 
+      div.large-9.columns
+         h2.space-top-2 Tools Used in This Project
+            span.fa.fa-check-square-o.fa-lg.lt-space-2
+         p There are quite a few open source tools we used for this project starting with Node.js and Express.js.
+         br
+
+         h3 Node.js 
+            span.fa.fa-space-shuttle.lt-space
+         img(src='images/nodejs.png', alt='NodeJS', class='right img-med')
+         p Node.js is a platform built on Chrome's JavaScript runtime (V8 engine) for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices. Written by Ryan Dahl. 
+         p The strengths of node are:
+         ul
+            li.square Very efficient and fast
+            li.square Full stack JavaScript &mdash; with JS running in the server 
+            li.square Great for real-time, scalable applications using websockets
+            li.square Lightweight and very modular 
+            li.square NPM library has over 100,000 modules
+            li.square Supports rapid prototyping to quickly bring ideas to life
+            li.square Enables JavaScript to support asynchronous, non-blocking, single threaded, multi-process activities
+         br
+
+         h3 Express.js 
+            span.fa.fa-cloud.lt-space
+         img(src='images/expressjs.jpg', alt='Express.js', class='right img-med')
+         p Express.js is a Sinatra-inspired web development framework for Node.js. It has become the most popular platform for Node applications. Express was written by TJ Holowaychuk and is now maintained by StrongLoop. The strengths of Express are:
+         ul
+            li.square Insanely fast and simple 
+            li.square Robust set of features for building single, multi-page & hybrid web applications 
+            li.square Very flexible by adding middleware and Node modules
+            li.square Gives you a full HTTP server with request & response enhancements
+            li.square Strong view options (i.e., Jade, EJS, Swig or Handlebars)
+            li.square HTML & redirection helpers
+            li.square Environment-based configuration
+            li.square Ability to create robust APIs quickly and easily
+         br
+
+         h3 Mongoose 
+            span.fa.fa-codepen.lt-space
+         img(src='images/mongoose.png', alt='Mongoose', class='right img-med')
+         p Mongoose provides a straight-forward, schema-based solution to modeling your Node application data as an object-document modeler (ODM). It makes it very easy to integration MongoDB with your Node and Express applications. Benefits include:
+         ul
+            li.square Built-in type casting, validation, query building, business logic hooks and more, out of the box
+            li.square Perfect when interacting with MongoDB data in a structured and repeatable way
+            li.square You define your data model in JSON inside your code
+            li.square Returns data as a JSON object rather than a JSON string returned by MongoDB
+            li.square Has a whole suite of helper functions and methods to extend schemas
+            li.square Removes some levels of complexity with nested callbacks compared with the native MongoDB driver 
+         br
+
+         h3 MongoDB
+            span.fa.fa-database.lt-space-2
+         img(src='images/mongodb.png', alt='MongoDB', class='right img-med')
+         p MongoDB is one of the most popular databases for Node applications. Mongo is a document-oriented database with many benefits:
+         ul
+            li.square Blindingly fast, super flexible and massively scalable 
+            li.square Very easy to use 
+            li.square Easy to extend without having to worry about schema designs 
+            li.square No need for complicated configuration or setup 
+            li.square No need to worry about transactions, ACID compliance, joins, foreign keys and other SQL challenges
+            li.square Ideal for many document type applications, such as content management systems 
+         br
+         br
+         
+      div.large-3.medium-3.columns.hide-for-small-only
+         include sidebar
+

@@ -1,0 +1,18 @@
+//- views/users/new.jade 
+
+extends ../layout2
+
+block content
+   #user-form
+      h3 Signup
+
+      if error
+         p.notification.error= error
+
+      form(action='/users', method='post')
+         p: input(type='text', name='username', placeholder='Username')
+         p: input(type='password', name='password', placeholder='Password')
+         p: input(type='submit', value='Signup' class='button success btn-size')
+
+      p.none: a(href='/sessions/new') Back to login
+

@@ -1,0 +1,82 @@
+doctype html
+html
+   head
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+ 
+      title blog editor
+ 
+      link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800', type='text/css')
+      link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css')
+      link(rel='stylesheet', href='/stylesheets/app.css', type='text/css' media='screen')
+ 
+   body
+      header
+         //- navigation 
+         nav(class='top-bar' data-topbar)
+            ul.title-area
+               li.name
+                  h1 
+                     a(href='/')
+                        span.rt-space-2 node.js & express.js 
+                           span.fa.fa-home
+               li.toggle-topbar.menu-icon
+                  a(href='#') 
+                     span menu
+
+            //- right selection
+            section.top-bar-section
+               ul.right
+                  li#welcome welcome #{username}
+                  li.divider
+                  li
+                     a(href='/blogmgr/list') blog mgr
+                        span.lt-space.fa.fa-th
+                  li.divider
+                  li
+                     a(href='/blogmgr/new') create blog
+                        span.lt-space.fa.fa-edit
+                  li.divider
+                  li
+                     if isLoggedIn
+                        form(action='/sessions', method='POST')
+                           input(type='hidden', name='_method', value='DELETE')
+                           input(type='submit', id='sign-out', value='sign out')
+ 
+      block content
+
+      footer
+         div#footer
+            div.row
+               div.medium-8.medium-8.small-9.columns
+                  ul.my-links-2
+                     li
+                        a.sm(href='/blogs') project articles
+                           span.lt-space.fa.fa-laptop.fa-lg
+                  ul.my-links-2
+                     li
+                        a.sm(href='/tools') open source tools used
+                           span.lt-space.fa.fa-code.fa-lg
+                  ul.my-links-2
+                     li
+                        a.sm(href='/project') about the project
+                           span.lt-space.fa.fa-headphones.fa-lg
+                  br
+                  br
+                  p
+                     a.sm(href='/blogmgr/list') blog mgr
+                           span.lt-space.fa.fa-th
+
+               div.medium-4.medium-4.small-3.columns
+                  div.my-links
+                     a.sm(href='http://www.github.com/markcalkins', target='_blank') download the project here 
+                        span.lt-space.fa.fa-github-square.fa-lg
+                     p.copyright this website is open source
+
+
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+      script(src='/foundation/js/foundation.min.js')
+      //- script(src="/javascripts/src-noconflict/ace.js")
+      //- script(src="/javascripts/src-noconflict/ext-language_tools.js")
+      script(src='/javascripts/app.js')
+      script(src='/javascripts/sticky-footer.js')
