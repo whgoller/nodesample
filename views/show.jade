@@ -3,7 +3,7 @@ extends layout
 
 block content
    section.homepage-hero
-      img(src='images/project-blogs.svg')
+      img(src='http://placehold.it/1600x200/03B0A3/ffffff&text=project+blogs')
 
    div.row
       //- left section 
@@ -17,8 +17,8 @@ block content
             
             p !{blog.body}
 
-            //- is this line of code is broken?
-            //- a(href='/blogs/#{nextBlog.slug}') get next
+            //- this line of code is broken -- blows up when going to the last blog
+            a(href='/blogs/#{nextBlog.slug}') get next
 
             br
             br

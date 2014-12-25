@@ -1,4 +1,4 @@
-// routes/blogs.js 
+// routes/blogs.js  
 // blog routes -- controller to perform blog crud functions
 
 var Blog = require('../models/blog')
