@@ -391,6 +391,10 @@ th.center {
       padding: 0 22px;
    }
 
+   .top-bar input, .top-bar .button, .top-bar button {
+      top: 6px;
+   }
+
    #welcome {
       background: none;
       color: white;
@@ -406,14 +410,14 @@ th.center {
       font-size: .9rem;
       font-weight: 300; 
       margin: 1px 1px 0;
-      padding: 1px 22px 15px;
+      padding: 4px 22px 14px;
    }
    #sign-out:hover {
       background: #272727;
       font-size: .9rem;
       font-weight: 300; 
-      margin: -6px 0 0;
-      padding-top: 12px;
+      margin: -6px 1px 0;
+      padding-top: 11px;
    }
    #sign-out:focus {
       background: $primary-color;
@@ -444,6 +448,11 @@ th.center {
    .btn-size-3 {
       margin-top: 5px;
       padding: 6px 24px 30px;
+   }
+
+   .btn-size-4 {
+      height: 36px;
+      padding: 0 24px;
    }
 
    .none {
