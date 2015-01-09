@@ -38,6 +38,19 @@ exports.show = function(req, res) {
    })
 }
 
+// display blog list table
+exports.blogtable = function(req, res, next) {
+   Blog.find({})
+      .sort('-createdOn')
+      .exec(function(err, blogs) {
+      if (!err) {
+         res.render('blogtable', { blogs : blogs, blogList : req.blogs })
+      } else {
+         console.error(err)
+      }
+   })
+}
+
 // get next blog
 exports.nextBlog = function(req, res, next) {
    var promise

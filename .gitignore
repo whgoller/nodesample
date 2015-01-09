@@ -1,3 +1,4 @@
 bower_components
 mongod.log
 node_modules
+lib/db

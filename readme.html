@@ -19,7 +19,7 @@
 </head>
 <body bgcolor="white">
 
-   <h1>Getting Started</h1>
+   <h1>OpenWest Node/Express Project - Getting Started</h1>
    <p>Thank you for downloading this project. The project is self documenting, but you need enough information to get started, which is the purpose of this readme.</p>
 
    <h2>Do This First</h2>
@@ -28,7 +28,7 @@
       <li>If you do not have Node.js on your computer, you'll need to download and install it. You can do that by going to <a href="http://nodejs.org/download/" target="_blank">nodejs.org</a>. </li>
       <li>You will also need Bower to install a few other components for your app. Once you have Node.js installed, it is pretty easy:</li>
          <p><code>npm install -g bower</code></p>
-      <li>The application uses MongoDB for storing blogs. You'll need to install MongoDB. This page <a href="http://docs.mongodb.org/manual/installation/" target="_blank">shows you how</a>.</li>
+      <li>The application uses MongoDB for storing blogs. You'll need to install MongoDB. <a href="http://docs.mongodb.org/manual/installation/" target="_blank">This page </a>shows you how.</li>
       <li>Create a new directory for your project and move all the downloaded project files to that directory.</li>
       <li>Now you can install all of the node modules and bower components. You can by running these commands in your terminal in the same directory where you moved your files.</li>
       <p><code>npm install</code><br>
@@ -39,16 +39,16 @@
    <p>Once you have all the modules installed, you can run the app:</p>
 
    <ol>
-      <li>Still in terminal located at the directory where the files are located, you can start the local MongoDB database (local to this application):</li>
+      <li>In terminal (located at the directory where you moved the project files), you can start the local MongoDB database (local to this application):</li>
          <p><code>mongod --dbpath ./lib/db</code></p>
       <li>Open a second terminal window in the same directory.</li>
-      <li>We installed nodemon, a utility that will automatically relaunch the Node app if there are any changes to your Node app. It can also watch specific directories:</li>
-      <p><code>nodemon app.js</code></p>
-      <li>Click on <a href="http://localhost:3000">this link</a> to open a browser window to show the app running.</li>
+      <li>Launch the Node app:</li>
+      <p><code>node app.js</code></p>
+      <li>Click on <a href="http://localhost:3000" target="_blank">this link</a> to open a browser window to show the app running.</li>
    </ol>
 
    <p>You are now up and running!</p>
-   <p>Note the link blog mgr in the footer. That will take you to the Blog Editor. You'll need to create a new user and password, then log into the editor. </p>
+   <p>Note the <a href="http://localhost:3000/blogmgr/list">blog mgr link</a>a> in the footer. That will take you to the blog manager where you can create new or edit existing blogs. You'll need to create a new user and password first, then log into the blog manager. </p>
 
 </body>
 </html>

@@ -35,8 +35,8 @@ block content
             input(type='submit', value='#{blog ? "update" : "save"}', id='resize' class='button success btn-size')
 
          if blog
-            form(action="/blogs/#{blog.slug}", method='get')
-               input(type='submit', value='view', class='button success btn-size-3 relo-btn')
+            form(action="/blogmgr/list", method='get')
+               input(type='submit', value='cancel', class='button success btn-size-3 relo-btn')
          if ! blog
             p
                a(href='/blogmgr/list') return to blog mgr
