@@ -1,0 +1,26 @@
+//- views/delete.jade
+extends layout2
+
+block content
+    div.row
+      div.large-12.medium-12.small-12.columns
+         br
+         br
+         br
+
+         h3.left delete #{blog ? blog.title : ""}?
+            span.fa.fa-jsfiddle.lt-space
+
+         br
+         br
+         br
+
+         div Are you sure you want to delete this blog?
+
+         br
+
+        form(action="/blogmgr/#{blog.slug}", method='post')
+            input(type='hidden' name='_method' value='delete')
+            input(type='hidden' name='confirm' value='1')
+            a.cancel-delete(href='/blogmgr/list') cancel
+            input(type='submit', value='delete', class='button btn-size-2')

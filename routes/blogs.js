@@ -1,4 +1,4 @@
-// routes/blogs.js  
+// routes/blogs.js
 // blog routes -- controller to perform blog crud functions
 
 var Blog = require('../models/blog')
@@ -13,13 +13,13 @@ exports.home = function(req, res) {
 }
 
 // tools used page
-exports.tools = function(req, res) { 
-   res.render('tools', { blogList : req.blogs }) 
+exports.tools = function(req, res) {
+   res.render('tools', { blogList : req.blogs })
 }
 
 // project description page
-exports.project = function(req, res) { 
-   res.render('project', { blogList : req.blogs }) 
+exports.project = function(req, res) {
+   res.render('project', { blogList : req.blogs })
 }
 
 // main blog articles page
@@ -91,13 +91,13 @@ exports.new = function(req, res) {
    })
 }
 
-// save new blog 
+// save new blog
 exports.create = function(req, res) {
-   Blog.create({ 
+   Blog.create({
       author: req.session.username,
       title: req.param('title'),
       slug: this.slug,
-      body: req.param('body'), 
+      body: req.param('body'),
       tags: req.param(['tags'])
    }, function(err, blog) {
       if(!err) {
@@ -109,7 +109,7 @@ exports.create = function(req, res) {
    })
 }
 
-// open existing blog to edit 
+// open existing blog to edit
 exports.edit = function(req, res) {
    Blog.findOne({'slug': req.param('slug')}, function (err, blog) {
       if (err) return console.error(err)
@@ -135,11 +135,22 @@ exports.update = function(req, res) {
    })
 }
 
-// delete an existing blog 
+// delete an existing blog
 exports.destroy = function(req, res, next) {
-   Blog.remove({'slug': req.param('slug')}, function (err, blogs) {
-      if (err) return console.error(err)
-      res.redirect('list')
-   })
+    console.log(req.params);
+   if(req.param('confirm')) {
+        Blog.remove({'slug': req.param('slug')}, function (err, blogs) {
+           if (err) return console.error(err)
+           res.redirect('list')
+        });
+   }
+   else {
+        Blog.findOne({'slug': req.param('slug')}, function (err, blog) {
+            if (err) return console.error(err)
+            res.render('delete', {
+               username : req.session.username,
+               blog : blog
+            })
+         })
+   }
 }
-
