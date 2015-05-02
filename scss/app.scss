@@ -43,6 +43,14 @@ ul {
    line-height: 1.5;
 }
 
+form a {
+    display: inline-block;
+
+    &.cancel-delete {
+        padding: 0 16px 0 128px;
+    }
+}
+
 .code {
    color: $primary-color;
    font-family: Monaco, 'Lucida Console', sans-serif;
@@ -63,7 +71,7 @@ ul {
    color: $grey-color;
    font-family: Monaco, 'Lucida Console', sans-serif;
    font-size: .9rem;
-   margin: 20px 0 1px 30px;   
+   margin: 20px 0 1px 30px;
 }
 
 .indent {
@@ -119,7 +127,7 @@ img {
 }
 
 .blog {
-   color: $primary-color; 
+   color: $primary-color;
    font-size: .9rem;
    text-transform: uppercase;
    border-top-style: solid;
@@ -296,12 +304,6 @@ td.thin {
 }
 
 
-/************************* MIXINS *************************/
-
-
-
-
-
 /********************** MOBILE PHONES **********************/
 @media #{$small-up} {
 
@@ -436,14 +438,14 @@ td.thin {
       border: none;
       color: #fff;
       font-size: .9rem;
-      font-weight: 300; 
+      font-weight: 300;
       margin: 1px 1px 0;
       padding: 4px 22px 14px;
    }
    #sign-out:hover {
       background: #272727;
       font-size: .9rem;
-      font-weight: 300; 
+      font-weight: 300;
       margin: -6px 1px 0;
       padding-top: 11px;
    }
@@ -451,7 +453,7 @@ td.thin {
       background: $primary-color;
       border: none;
       font-size: .9rem;
-      font-weight: 300; 
+      font-weight: 300;
       margin: -6px 0 0;
       outline: none;
       padding-top: 12px;
@@ -492,6 +494,10 @@ td.thin {
       margin: 5px 10px;
    }
 
+   .btn-size-6 {
+      margin-top: 20px;
+      padding: 10px 24px;
+   }
 
    .none {
       font-size: .9rem;

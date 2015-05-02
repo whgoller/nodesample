@@ -26,9 +26,8 @@ var User = new Schema({
    safe: true
 }, {collection: 'users'})
 
-// cannot add password on the schema
-// nor use a virtual password setter since hashing function is async
-// need to create setPassword, saveWithPassword and validateAll methods
+// allow user to set password
+
 User.methods.setPassword = function(password, callback) {
    pass.hash(password, (function(err, salt, hash) {
       if (err) { 

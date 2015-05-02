@@ -19,6 +19,11 @@ var responseTime   = require('response-time')
 var favicon        = require('serve-favicon')
 
 
+// environment setup
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+
+
+
 // view setup
 app.set('view engine', 'jade')
 app.set('views', './views')
@@ -62,7 +67,7 @@ app.get('/tools', blogs.getRecentBlogs, blogs.tools)                         // 
 app.get('/project', blogs.getRecentBlogs, blogs.project)                     // show about page
 app.get('/blogs', blogs.getRecentBlogs, blogs.nextBlog, blogs.blogs)         // show main blogs
 app.get('/blogs/:slug', blogs.getRecentBlogs, blogs.nextBlog, blogs.show)    // show single blog
-app.get('/blogtable', blogs.getRecentBlogs, blogs.blogtable)           // show single blog
+app.get('/blogtable', blogs.getRecentBlogs, blogs.blogtable)                 // show single blog
 
 // blog manager 
 // include requireUserAuth for urls that need login auth

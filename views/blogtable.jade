@@ -1,0 +1,39 @@
+//- display list of blog page
+extends layout
+
+block content
+   section.homepage-hero
+      img(src='images/project-blogs.svg' alt='Project Blogs')
+
+
+   div.row
+      div.large-9.columns.tp-space
+         h2.space-top-2 Blog List
+            span.fa.fa-table.lt-space-2
+         br
+
+         //- table
+         table.bloglist
+            thead
+               tr.head
+                  th.center2(width='320') title
+                  th.center2(width='260') tags
+                  th.center2(width='100') view
+
+            tbody
+               each blog in blogs
+                  tr.font-200
+                     td.thin.bloglist #{blog.title}
+                     td.thin.bloglist #{blog.tags}
+                     td.thin.bloglist
+                        form(action="/blogs/#{blog.slug}", method='get')
+                           input(type='submit', value='view', class='button btn-size-5')
+
+         br
+         br
+         br
+
+      //- right section
+      div.large-3.medium-3.columns.hide-for-small-only
+         include sidebar
+
