@@ -14,11 +14,11 @@ block content
          br
 
          h3 description
-         p The project is a simple model-view-controller app using Express 4.x and Mongoose. The application allows users to register and login and enables them to view, edit and delete blogs. A few static pages are built in Jade, a template engine, while the blogs are retrieved from the MongoDB database, thereby simulating a simple CMS application. 
+         p The project is a simple model-view-controller app using Express 4.x and Mongoose. The application allows users to register, login and view, edit and delete blogs. A few static pages are built in Jade, a template engine, while the blogs are retrieved from the MongoDB database, thereby simulating a simple CMS application. 
 
-         p To get the maximum value out of this page, you'll need to look at the project source code. See link in the footer to download.
+         p To get the maximum value out of this page, you'll need to look at the project source code. See link in the footer to do a pull request or download.
 
-         p The main file of the application is located in the project directory and is named #[span.code app.js], which handles the following: 
+         p The main file of the application is located in the root project directory and is named #[span.code app.js]. It handles the following: 
          ul
             li.square defines all module dependencies  
             li.square loads all middleware required for the project
@@ -40,7 +40,7 @@ block content
             li.square #[span.code users.js] &mdash; displays the user registration page and creates a user in the database
             li.square #[span.code sessions.js] &mdash; renders the login page, manages user authentication, and signs users out
             li.square #[span.code main.js] &mdash; the application controller for routes requiring user authentication
-            li.square #[span.code index.js] &mdash; exports every route in #[span.code app.js]
+            //- li.square #[span.code index.js] &mdash; exports every route in #[span.code app.js]
 
          p The models folder contains two import JavaScript files:
          ul
@@ -68,7 +68,7 @@ block content
             li.square #[span.code query.js] &mdash; currently not used 
             li.square #[span.code index.js] &mdash; makes the helper files available
 
-         p The public folder contains images, style sheets and general folders:
+         p The public folder contains images, js files, stylesheets and favicon:
          ul
             li.square the images folder contains all the images   
             li.square the javascripts folder contains sticky-footer.js, a simple script to stick the footer to the bottom when the viewport is larger than the page size

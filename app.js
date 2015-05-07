@@ -9,7 +9,6 @@ var bodyParser     = require('body-parser')
 var methodOverride = require('method-override')
 var errorHandler   = require('errorhandler')
 var routes         = require('./routes')
-var index          = require('./routes/index')   // doesn't seem to work
 var main           = require('./routes/main')
 var sessions       = require('./routes/sessions')
 var users          = require('./routes/users')
@@ -21,7 +20,6 @@ var favicon        = require('serve-favicon')
 
 // environment setup
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-
 
 
 // view setup
@@ -42,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(responseTime())
 
 
-// add put & delete 
+// add support for puts & deletes through http calls
 app.use(methodOverride(function(req, res){
    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
       // look in urlencoded POST bodies 
@@ -114,4 +112,3 @@ var port = process.env.PORT || 3000
 db.connect()
 app.listen(port)
 console.log('server started on port ' + port)
-
